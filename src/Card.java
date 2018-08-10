@@ -26,26 +26,18 @@ public class Card implements Comparable<Card> {
 		return rank;
 	}
 
-	public void setRank(int rank) {
-		this.rank = rank;
+	public void setJoker(boolean isJoker) {
+		this.isJoker = isJoker;
 	}
 
 	public boolean isJoker() {
 		return isJoker;
 	}
 
-	public void setJoker(boolean isJoker) {
-		this.isJoker = isJoker;
-	}
-
 	public String getSuit() {
 		return suit;
 	}
-
-	public void setSuit(String suit) {
-		this.suit = suit;
-	}
-
+	
 	public String getValue() {
 		return value;
 	}
