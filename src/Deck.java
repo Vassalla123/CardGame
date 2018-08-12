@@ -32,6 +32,24 @@ public class Deck {
 		return cardList;
 
 	}
+	
+	public List<Card> shuffle()
+	{
+		Random rand = new Random();
+        
+        for (int i = 0; i < cardList.size(); i++)
+        {
+            // Random for remaining positions.
+            int r = i + rand.nextInt(52 - i);
+             
+             //swapping the elements
+             Card temp = cardList.get(i);
+             cardList.set(i, cardList.get(r));
+             cardList.set(r, temp);
+              
+        }
+        return cardList;
+	}
 
 	public List<Card> getNCards(int n) {
 
@@ -66,5 +84,11 @@ public class Deck {
 	public void setDeckCount(int deckCount) {
 		this.deckCount = deckCount;
 	}
-
+    public static void main(String args[])
+    {
+    	Deck d=new Deck(1, false);
+    	System.out.println(d.cardList.get(3).getValue());
+    	d.shuffle();
+    	System.out.println(d.cardList.get(3).getValue());
+    }
 }

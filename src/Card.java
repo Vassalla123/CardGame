@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Card implements Comparable<Card> {
-	String suit = new String();
-	String value = new String();
-	int rank;
+	private String suit = new String();
+	private String value = new String();
+	private int rank;
 	boolean isJoker;
 
 	final String[] suits = { "Diamond", "Heart", "Spade", "Clubs" };
@@ -42,9 +42,6 @@ public class Card implements Comparable<Card> {
 		return value;
 	}
 
-	public void setValue(String value) {
-		this.value = value;
-	}
 
 	@Override
 	public int compareTo(Card o) {
