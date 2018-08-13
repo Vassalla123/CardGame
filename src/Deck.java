@@ -2,9 +2,8 @@
 import java.util.*;
 
 public class Deck {
-	String[] suite = { "Diamond", "Heart", "Spade", "Clubs" };
-	int[] rank = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };
-	String[] value = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
+	final String[] suite = { "Diamond", "Heart", "Spade", "Clubs" };
+	final String[] value = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
 	ArrayList<Card> cardList = new ArrayList<Card>();
 	int deckCount;
 
@@ -40,8 +39,8 @@ public class Deck {
         for (int i = 0; i < cardList.size(); i++)
         {
             // Random for remaining positions.
-            int r = i + rand.nextInt(52 - i);
-             
+            int r = i + rand.nextInt(cardList.size() - i);
+          
              //swapping the elements
              Card temp = cardList.get(i);
              cardList.set(i, cardList.get(r));
@@ -87,8 +86,9 @@ public class Deck {
     public static void main(String args[])
     {
     	Deck d=new Deck(1, false);
-    	System.out.println(d.cardList.get(3).getValue());
+    	
+    	System.out.println(d.cardList.get(0).getValue());
     	d.shuffle();
-    	System.out.println(d.cardList.get(3).getValue());
+    	System.out.println(d.cardList.get(0).getValue());
     }
 }
